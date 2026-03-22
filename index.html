@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manat Ketkan | Modern Portfolio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+
+    <div class="bg-shapes">
+        <div class="blob blob-1" id="blob1"></div>
+        <div class="blob blob-2" id="blob2"></div>
+    </div>
+
+    <nav id="navbar">
+        <div class="container">
+            <div class="logo">Manat.K</div>
+            <div class="nav-links">
+                <a href="#projects" class="nav-item"><i class="fa-solid fa-layer-group"></i> ผลงาน</a>
+                <a href="https://github.com/t4emin" target="_blank" class="nav-item"><i class="fa-brands fa-github"></i> GitHub</a>
+                
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <a href="#" class="btn-resume-trigger" id="openResume">
+                    <i class="fa-regular fa-file-pdf"></i> ดูเรซูเม่
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="horizontal-section" id="about">
+        <div class="scroll-progress-wrapper">
+            <div class="running-indicator">
+                <div id="car-wrapper">
+                    <i id="car-icon" class="fa-solid fa-car-side"></i>
+                </div>
+            </div>
+            <div class="scroll-progress-bar"></div>
+        </div>
+
+        <div class="horizontal-container">
+            <div class="panel">
+                <div class="panel-content no-bg">
+                    <div class="profile-image-container">
+                        <img src="images/profile.jpg" alt="Manat Ketkan Profile" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Manat+K&background=0071e3&color=fff&size=160&font-size=0.4'">
+                    </div>
+                    <h1 class="intro-title">สวัสดีครับ ผม <span>มนัส เกษก้าน</span></h1>
+                    <p class="intro-subtitle">นักพัฒนา Frontend ที่ชื่นชอบการสร้างประสบการณ์ Web ที่ยอดเยี่ยม</p>
+                    <div class="scroll-guide">
+                        <div class="mouse-icon"></div>
+                        <span>เลื่อนเพื่อดูโปรไฟล์</span>
+                        <i class="fa-solid fa-arrow-right-long"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-content">
+                    <h2 class="panel-title"><i class="fa-regular fa-address-card"></i> ข้อมูลส่วนตัว</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <h4><i class="fa-solid fa-calendar-day text-primary"></i> วันเกิด</h4>
+                            <p>3 กรกฎาคม 2540</p>
+                        </div>
+                        <div class="info-item">
+                            <h4><i class="fa-solid fa-hourglass-half text-primary"></i> อายุ</h4>
+                            <p>28 ปี</p>
+                        </div>
+                        <div class="info-item">
+                            <h4><i class="fa-solid fa-envelope text-primary"></i> อีเมล</h4>
+                            <p>official.manat@gmail.com</p>
+                        </div>
+                        <div class="info-item">
+                            <h4><i class="fa-solid fa-phone text-primary"></i> โทรศัพท์</h4>
+                            <p>096-856-1598</p>
+                        </div>
+                        <div class="info-item full-width">
+                            <h4><i class="fa-solid fa-location-dot text-primary"></i> ที่อยู่</h4>
+                            <p>เขตจตุจักร, กรุงเทพมหานคร, ประเทศไทย</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-content">
+                    <h2 class="panel-title"><i class="fa-solid fa-graduation-cap"></i> การศึกษาและเป้าหมาย</h2>
+                    <div class="info-grid">
+                        <div class="info-item full-width">
+                            <h4>มหาวิทยาลัยราชภัฏสวนสุนันทา</h4>
+                            <p>วิทยาศาสตรบัณฑิต (สาขาเทคโนโลยี)</p>
+                        </div>
+                        <div class="info-item full-width mt-4">
+                            <h4>เป้าหมายในการทำงาน</h4>
+                            <p style="font-size: 1.1rem; font-weight: 400; color: var(--text-secondary); line-height: 1.8;">
+                                มุ่งมั่นสร้างสรรค์ Web Application ที่มีประสิทธิภาพสูง ด้วยโค้ดที่สะอาดและสถาปัตยกรรมที่รองรับการขยายตัว (Scalable) เพื่อส่งมอบผลลัพธ์ทางธุรกิจและประสบการณ์การใช้งาน (UX) ที่ดีที่สุด
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio-section" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-briefcase text-primary"></i> ผลงานที่โดดเด่น</h2>
+            </div>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <i class="fa-solid fa-building-columns project-icon"></i>
+                        <h3>KBTG</h3>
+                        <p>Kasikorn Business-Technology Group พัฒนาระบบและอินเทอร์เฟซสำหรับธนาคารที่มีความปลอดภัยสูง</p>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="project-tag"><i class="fa-brands fa-react"></i> React / Next.js</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <i class="fa-solid fa-landmark project-icon"></i>
+                        <h3>DGA</h3>
+                        <p>สำนักงานพัฒนารัฐบาลดิจิทัล พัฒนาแพลตฟอร์มบริการภาครัฐที่รองรับผู้ใช้งานจำนวนมาก</p>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="project-tag"><i class="fa-brands fa-js"></i> TypeScript</span>
+                        <span class="project-tag">Next.js</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <i class="fa-solid fa-cart-shopping project-icon"></i>
+                        <h3>Coway TH / SG</h3>
+                        <p>แพลตฟอร์มอีคอมเมิร์ซและระบบจัดการการบริการสำหรับตลาดในไทยและสิงคโปร์</p>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="project-tag"><i class="fa-brands fa-php"></i> PHP</span>
+                        <span class="project-tag"><i class="fa-brands fa-react"></i> React</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <i class="fa-solid fa-gem project-icon"></i>
+                        <h3>Rosrin</h3>
+                        <p>เว็บไซต์แบรนด์ไลฟ์สไตล์ที่ทันสมัย เน้นความสวยงามของ UI และประสบการณ์ใช้งานที่ดี (UX)</p>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="project-tag"><i class="fa-brands fa-vuejs"></i> Vue / Nuxt</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <i class="fa-solid fa-heart-pulse project-icon"></i>
+                        <h3>La Mitra</h3>
+                        <p>แพลตฟอร์มด้านสุขภาพและเวลเนสขั้นสูง พร้อมระบบจัดการข้อมูลที่ซับซ้อน</p>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="project-tag">Next.js</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <i class="fa-solid fa-hospital-user project-icon"></i>
+                        <h3>มิตรไมตรีคลินิก</h3>
+                        <p>ระบบจองคิวและจัดการตารางเวลาสำหรับบริการทางคลินิก</p>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="project-tag"><i class="fa-brands fa-html5"></i> HTML/CSS/JS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal-overlay" id="resumeModal" style="display: none;">
+        <div class="modal-content" id="modalContent">
+            <div class="modal-header">
+                <span class="modal-badge"><i class="fa-solid fa-circle-user text-primary"></i> โปรไฟล์การทำงาน</span>
+                <div class="modal-actions">
+                    <button class="btn-download" id="printBtn">
+                        <i class="fa-solid fa-download"></i> ดาวน์โหลด PDF
+                    </button>
+                    <button class="modal-close" id="closeResume">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="resume-body">
+                <div class="resume-header">
+                    <div>
+                        <h1>มนัส เกษก้าน</h1>
+                        <p class="role">Frontend Web Developer</p>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-item"><i class="fa-solid fa-phone"></i> 096-856-1598</div>
+                        <div class="contact-item"><i class="fa-solid fa-envelope"></i> official.manat@gmail.com</div>
+                        <div class="contact-item"><i class="fa-brands fa-github"></i> github.com/t4emin</div>
+                        <div class="contact-item"><i class="fa-solid fa-location-dot"></i> เขตจตุจักร, กรุงเทพมหานคร</div>
+                    </div>
+                </div>
+
+                <div class="resume-grid">
+                    <div class="main-col">
+                        <section class="resume-section">
+                            <h2><i class="fa-solid fa-user-tie"></i> ข้อมูลสรุป</h2>
+                            <p>นักพัฒนา Frontend ที่มีความเชี่ยวชาญในการพัฒนา Web Application ระดับ Enterprise มีประสบการณ์ร่วมงานกับองค์กรชั้นนำ เช่น KBTG, DGA และ Coway มุ่งเน้นการใช้ Next.js, React ในการสร้างระบบที่รองรับการขยายตัวและมีประสิทธิภาพสูง</p>
+                        </section>
+
+                        <section class="resume-section">
+                            <h2><i class="fa-solid fa-briefcase"></i> ประสบการณ์การทำงาน</h2>
+                            
+                            <div class="exp-item">
+                                <div class="exp-header">
+                                    <h3>Frontend Developer</h3>
+                                    <span class="exp-date">2023 - ปัจจุบัน</span>
+                                </div>
+                                <p class="exp-company">KBTG / DGA (สำนักงานพัฒนารัฐบาลดิจิทัล)</p>
+                                <ul class="exp-list">
+                                    <li><i class="fa-solid fa-chevron-right"></i> พัฒนาแพลตฟอร์มระบบธนาคารและบริการภาครัฐดิจิทัลที่มีความปลอดภัยสูง</li>
+                                    <li><i class="fa-solid fa-chevron-right"></i> ออกแบบโครงสร้าง Reusable UI Components ด้วย Next.js และ TypeScript</li>
+                                    <li><i class="fa-solid fa-chevron-right"></i> ปรับแต่ง Core Web Vitals เพื่อเพิ่มประสิทธิภาพให้รองรับผู้ใช้งานจำนวนมาก</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="exp-item">
+                                <div class="exp-header">
+                                    <h3>Web Developer</h3>
+                                    <span class="exp-date">2022 - 2023</span>
+                                </div>
+                                <p class="exp-company">Coway Thailand / Singapore</p>
+                                <ul class="exp-list">
+                                    <li><i class="fa-solid fa-chevron-right"></i> ดูแลแพลตฟอร์มอีคอมเมิร์ซและระบบจัดการบริการภายในของระดับภูมิภาค</li>
+                                    <li><i class="fa-solid fa-chevron-right"></i> เพิ่มอัตราการสั่งซื้อ (Conversion Rates) ผ่านการปรับปรุง UX และประสิทธิภาพเว็บ</li>
+                                </ul>
+                            </div>
+
+                            <div class="exp-item">
+                                <div class="exp-header">
+                                    <h3>Web & UI Developer</h3>
+                                    <span class="exp-date">2021 - 2022</span>
+                                </div>
+                                <p class="exp-company">มิตรไมตรีคลินิก / Rosrin / La Mitra</p>
+                                <ul class="exp-list">
+                                    <li><i class="fa-solid fa-chevron-right"></i> พัฒนาระบบเว็บไซต์แบบครบวงจรสำหรับหลากหลายอุตสาหกรรม</li>
+                                    <li><i class="fa-solid fa-chevron-right"></i> สร้างสรรค์งานออกแบบจาก Figma สู่โค้ดจริง (Pixel-perfect)</li>
+                                </ul>
+                            </div>
+                        </section>
+
+                        <section class="resume-section">
+                            <h2><i class="fa-solid fa-graduation-cap"></i> ประวัติการศึกษา</h2>
+                            <div class="exp-item">
+                                <div class="exp-header">
+                                    <h3>วิทยาศาสตรบัณฑิต (สาขาเทคโนโลยี)</h3>
+                                    <span class="exp-date">สำเร็จการศึกษา</span>
+                                </div>
+                                <p class="exp-company" style="margin-top: 0.3rem;">มหาวิทยาลัยราชภัฏสวนสุนันทา</p>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="side-col">
+                        <section class="resume-section">
+                            <h2><i class="fa-solid fa-code"></i> ทักษะโปรแกรมมิ่ง</h2>
+                            
+                            <div class="skill-group">
+                                <h4>ภาษาหลัก</h4>
+                                <div class="skill-tags">
+                                    <span class="tag"><i class="fa-brands fa-js text-primary"></i> JavaScript</span>
+                                    <span class="tag">TypeScript</span>
+                                    <span class="tag"><i class="fa-brands fa-php"></i> PHP</span>
+                                    <span class="tag"><i class="fa-brands fa-html5"></i> HTML/CSS</span>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-group">
+                                <h4>เฟรมเวิร์ก</h4>
+                                <div class="skill-tags">
+                                    <span class="tag highlight"><i class="fa-brands fa-react"></i> React.js</span>
+                                    <span class="tag highlight">Next.js</span>
+                                    <span class="tag"><i class="fa-brands fa-vuejs"></i> Vue.js</span>
+                                    <span class="tag">Nuxt.js</span>
+                                    <span class="tag">Tailwind</span>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="resume-section">
+                            <h2><i class="fa-solid fa-pen-nib"></i> เครื่องมือออกแบบ</h2>
+                            <div class="skill-tags">
+                                <span class="tag"><i class="fa-brands fa-figma"></i> Figma</span>
+                                <span class="tag">Adobe XD</span>
+                                <span class="tag">Illustrator</span>
+                            </div>
+                        </section>
+
+                        <section class="resume-section">
+                            <h2><i class="fa-solid fa-robot"></i> เครื่องมือ AI</h2>
+                            <div class="skill-tags">
+                                <span class="tag">ChatGPT</span>
+                                <span class="tag">Gemini</span>
+                                <span class="tag">Claude AI</span>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
