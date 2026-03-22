@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (typeof gsap !== "undefined") {
         gsap.registerPlugin(ScrollTrigger);
 
-        // Initial Page Load Animations
+        // Initial Page Load Animations (Atom nucleaus & panels)
         gsap.to(".panel-content", {
             y: 0,
             opacity: 1,
@@ -48,38 +48,42 @@ document.addEventListener("DOMContentLoaded", () => {
             delay: 0.2
         });
 
-        // Horizontal Scroll Logic with Car & Dust Effect
+        // Horizontal Scroll Logic with Rocket & Smoke Effect
         const horizontalSection = document.querySelector(".horizontal-section");
         const horizontalContainer = document.querySelector(".horizontal-container");
         const panels = gsap.utils.toArray(".panel");
         const progressWrapper = document.querySelector('.scroll-progress-wrapper');
-        const carIcon = document.getElementById('car-icon');
-        const carWrapper = document.getElementById('car-wrapper');
+
+        // UpdatedSelectors for Rocket
+        const rocketIcon = document.getElementById('rocket-icon'); // Target updated ID
+        const vehicleWrapper = document.getElementById('vehicle-wrapper'); // Wrapper remains same ID
 
         let scrollTimeout;
-        let lastDustTime = 0;
+        let lastSmokeTime = 0;
 
-        function createDust(leftPercent, direction) {
+        // Semantic renaming from Dust to Smoke
+        function createSmoke(leftPercent, direction) {
             const now = Date.now();
-            if (now - lastDustTime < 40) return;
-            lastDustTime = now;
+            if (now - lastSmokeTime < 40) return;
+            lastSmokeTime = now;
 
-            const dust = document.createElement('div');
-            dust.classList.add('dust-particle');
+            const smoke = document.createElement('div');
+            smoke.classList.add('smoke-particle'); // Updated class name
 
+            // Particles emerge from rocket rear (which is left side of icon since it points right)
             const offset = direction === 1 ? -15 : 15;
-            dust.style.left = `calc(${leftPercent}% + ${offset}px)`;
+            smoke.style.left = `calc(${leftPercent}% + ${offset}px)`;
 
-            progressWrapper.appendChild(dust);
+            progressWrapper.appendChild(smoke);
 
-            gsap.to(dust, {
+            gsap.to(smoke, {
                 x: -direction * (Math.random() * 20 + 10),
                 y: -(Math.random() * 20 + 10),
                 scale: Math.random() * 1.5 + 1,
                 opacity: 0,
                 duration: 0.5 + Math.random() * 0.5,
                 ease: "power1.out",
-                onComplete: () => dust.remove()
+                onComplete: () => smoke.remove()
             });
         }
 
@@ -95,22 +99,47 @@ document.addEventListener("DOMContentLoaded", () => {
                     onUpdate: (self) => {
                         const currentPercent = self.progress * 100;
 
-                        gsap.set(".scroll-progress-bar", { scaleX: self.progress });
+                        // 👇 1. ให้ GSAP คำนวณสีตามระยะทาง (เริ่มจาก ฟ้า -> เหลือง -> ส้ม -> แดง)
+                        const progressColor = gsap.utils.interpolate([
+                            "#00c6ff", // สีตอนเริ่ม (ฟ้า)
+                            "#facc15", // สีตอนกลาง (เหลือง)
+                            "#f97316", // สีตอนค่อนข้างปลาย (ส้ม)
+                            "#ef4444"  // สีตอนใกล้เสร็จ (แดง)
+                        ], self.progress);
+
+                        // 👇 2. อัปเดตสีพื้นหลังเข้าไปพร้อมกับขนาดความกว้าง
+                        gsap.set(".scroll-progress-bar", { 
+                            scaleX: self.progress,
+                            // เปลี่ยนสีไล่ระดับ โดยหางเป็นสีหลัก (Primary) และหัวจรวดเป็นสีที่เฟดเปลี่ยนไปเรื่อยๆ
+                            background: `linear-gradient(90deg, var(--primary), ${progressColor})`
+                        });
+
                         gsap.set(".running-indicator", { left: currentPercent + "%" });
 
+                        // Rocket logic for direction
                         if (self.direction === 1) {
-                            gsap.set(carWrapper, { scaleX: 1 });
+                            gsap.set(vehicleWrapper, { scaleX: 1 }); // Face Right
                         } else if (self.direction === -1) {
-                            gsap.set(carWrapper, { scaleX: -1 });
+                            gsap.set(vehicleWrapper, { scaleX: -1 }); // Face Left
                         }
 
-                        carIcon.classList.add('moving');
-                        createDust(currentPercent, self.direction);
+                        // Add moving class to rocket for bounce animation
+                        rocketIcon.classList.add('moving');
+                        createSmoke(currentPercent, self.direction);
 
+                        // Remove moving class after scroll stops
                         clearTimeout(scrollTimeout);
                         scrollTimeout = setTimeout(() => {
-                            carIcon.classList.remove('moving');
+                            rocketIcon.classList.remove('moving');
                         }, 150);
+
+                        // ดักว่าถ้าเลื่อนมาถึง 99% ให้เปิด Modal
+                        // if (self.progress >= 0.99) {
+                        //     const resumeModal = document.getElementById('resumeModal');
+                        //     if (resumeModal && resumeModal.style.display !== 'flex') {
+                        //         openModal();
+                        //     }
+                        // }
                     }
                 }
             });
@@ -174,8 +203,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const printBtn = document.getElementById('printBtn');
 
     function openModal(e) {
-        console.log(111);
-        
         if (e) e.preventDefault();
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
