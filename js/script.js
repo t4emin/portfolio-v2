@@ -68,17 +68,20 @@ document.addEventListener("DOMContentLoaded", () => {
             lastSmokeTime = now;
 
             const smoke = document.createElement('div');
-            smoke.classList.add('smoke-particle'); // Updated class name
+            smoke.classList.add('smoke-particle');
 
-            // Particles emerge from rocket rear (which is left side of icon since it points right)
-            const offset = direction === 1 ? -15 : 15;
+            // 1. แกน X: ปรับให้ควันออกมาจากด้านหลังจรวด
+            const offset = direction === 1 ? -20 : 10;
             smoke.style.left = `calc(${leftPercent}% + ${offset}px)`;
+
+            // 👇 2. แกน Y: ปรับความสูงให้ออกมาจาก "ตูดจรวด" (เพิ่มบรรทัดนี้) 👇
+            smoke.style.bottom = '25px'; // ลองแก้ตัวเลข 12px ให้มาก/น้อยลง เพื่อขยับควันขึ้น/ลงให้ตรงตูดจรวดพอดีครับ
 
             progressWrapper.appendChild(smoke);
 
             gsap.to(smoke, {
                 x: -direction * (Math.random() * 20 + 10),
-                y: -(Math.random() * 20 + 10),
+                y: -(Math.random() * 20 + 10), // ลอยขึ้นไปด้านบน
                 scale: Math.random() * 1.5 + 1,
                 opacity: 0,
                 duration: 0.5 + Math.random() * 0.5,

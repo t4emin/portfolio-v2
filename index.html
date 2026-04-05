@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manat Ketkan | Modern Portfolio</title>
-    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <link rel="stylesheet" href="css/style.css">
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
-
     <script src="js/script.js" defer></script>
 </head>
-<body>
 
+<body>
     <div class="bg-shapes">
         <div class="blob blob-1" id="blob1"></div>
         <div class="blob blob-2" id="blob2"></div>
@@ -26,9 +23,18 @@
         <div class="container">
             <div class="logo">Manat.K</div>
             <div class="nav-links">
-                <a href="#projects" class="nav-item"><i class="fa-solid fa-layer-group"></i> ผลงาน</a>
-                <a href="https://github.com/t4emin" target="_blank" class="nav-item"><i class="fa-brands fa-github"></i> GitHub</a>
+                <!-- <a href="#projects" class="nav-item"><i class="fa-solid fa-layer-group"></i> ผลงาน</a> -->
                 
+                <div class="nav-item dropdown">
+                    <div class="dropdown-trigger">
+                        <i class="fa-brands fa-github"></i> GitHub <i class="fa-solid fa-chevron-down" style="font-size: 11.2px; margin-left: 4.8px;"></i>
+                    </div>
+                    <div class="dropdown-menu">
+                        <a href="https://github.com/t4emin" target="_blank" class="dropdown-item"><i class="fa-brands fa-github"></i> t4emin</a>
+                        <a href="https://github.com/y3pdev" target="_blank" class="dropdown-item"><i class="fa-brands fa-github"></i> y3pdev</a>
+                    </div>
+                </div>
+
                 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
                     <i class="fa-solid fa-moon"></i>
                 </button>
@@ -55,15 +61,21 @@
                 <div class="panel-content no-bg">
                     <div class="profile-wrapper">
                         <div class="orbit-wrapper orbit-1">
-                            <div class="atom-orbit"><div class="electron"></div></div>
+                            <div class="atom-orbit">
+                                <div class="electron"></div>
+                            </div>
                         </div>
                         <div class="orbit-wrapper orbit-2">
-                            <div class="atom-orbit"><div class="electron"></div></div>
+                            <div class="atom-orbit">
+                                <div class="electron"></div>
+                            </div>
                         </div>
                         <div class="orbit-wrapper orbit-3">
-                            <div class="atom-orbit"><div class="electron"></div></div>
+                            <div class="atom-orbit">
+                                <div class="electron"></div>
+                            </div>
                         </div>
-                        
+
                         <div class="profile-nucleus">
                             <img src="images/profile.jpg" alt="Manat Ketkan Profile" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Manat+K&background=0071e3&color=fff&size=160&font-size=0.4'">
                         </div>
@@ -71,7 +83,7 @@
 
                     <h1 class="intro-title">สวัสดีครับ ผม <span>มนัส เกษก้าน</span></h1>
                     <p class="intro-subtitle">นักพัฒนา Frontend ที่ชื่นชอบการสร้างประสบการณ์ Web ที่ยอดเยี่ยม</p>
-                    
+
                     <div class="scroll-guide">
                         <div class="mouse-icon"></div>
                         <span>เลื่อนเพื่อดูโปรไฟล์</span>
@@ -102,7 +114,7 @@
                         </div>
                         <div class="info-item full-width">
                             <h4><i class="fa-solid fa-location-dot text-primary"></i> ที่อยู่</h4>
-                            <p>เขตจตุจักร, กรุงเทพมหานคร, ประเทศไทย</p>
+                            <p>85/1 หมู่ 5 ตำบลเขาน้อย อำเภอเขาชะเมา จังหวัดระยอง 21110</p>
                         </div>
                     </div>
                 </div>
@@ -114,13 +126,11 @@
                     <div class="info-grid">
                         <div class="info-item full-width">
                             <h4>มหาวิทยาลัยราชภัฏสวนสุนันทา</h4>
-                            <p>วิทยาศาสตรบัณฑิต (สาขาเทคโนโลยี)</p>
+                            <p>วิทยาศาสตรบัณฑิต (สาขาเทคโนโลยีสารสนเทศ)</p>
                         </div>
                         <div class="info-item full-width mt-4">
                             <h4>เป้าหมายในการทำงาน</h4>
-                            <p style="font-size: 1.1rem; font-weight: 400; color: var(--text-secondary); line-height: 1.8;">
-                                มุ่งมั่นสร้างสรรค์ Web Application ที่มีประสิทธิภาพสูง ด้วยโค้ดที่สะอาดและสถาปัตยกรรมที่รองรับการขยายตัว (Scalable) เพื่อส่งมอบผลลัพธ์ทางธุรกิจและประสบการณ์การใช้งาน (UX) ที่ดีที่สุด
-                            </p>
+                            <p>มุ่งมั่นสร้างสรรค์ Web Application ที่มีประสิทธิภาพสูง ด้วยโค้ดที่สะอาดและสถาปัตยกรรมที่รองรับการขยายตัว (Scalable) เพื่อส่งมอบผลลัพธ์ทางธุรกิจและประสบการณ์การใช้งาน (UX) ที่ดีที่สุด</p>
                         </div>
                     </div>
                 </div>
@@ -131,89 +141,147 @@
     <section class="portfolio-section" id="projects">
         <div class="container">
             <div class="section-header">
-                <h2><i class="fa-solid fa-briefcase text-primary"></i> ผลงานที่โดดเด่น</h2>
+                <h2><i class="fa-solid fa-briefcase text-primary"></i> นักศึกษาฝึกงาน (UX/UI Design)</h2>
             </div>
             <div class="project-grid">
-                <div class="project-card">
+                <a class="project-card has-bg" href="https://www.figma.com/design/OBlOancMnJsB4k09WtvZd6/DOA-Website?node-id=4602-8814&t=isisq4Xl2PNyt69v-0" target="_blank">
+                    <div class="card-image">
+                        <picture>
+                            <source media="(max-width: 768px)" srcset="images/web-01-home.webp" type="image/webp">
+                            <source media="(min-width: 769px)" srcset="images/web-01-home.webp" type="image/webp">
+                            <img src="images/web-01-home.jpg" alt="พอร์ตโฟลิโอ กรมท่าอากาศยาน" loading="lazy">
+                        </picture>
+                    </div>
+                    <div class="project-content">
+                        <i class="fa-solid fa-plane project-icon"></i>
+                        <h3>กรมท่าอากาศยาน</h3>
+                        <p>ออกแบบเว็บไซต์กรมท่าอากาศยาน เน้นความน่าเชื่อถือและการเข้าถึงข้อมูลได้ง่าย</p>
+                    </div>
+                </a>
+                <a class="project-card has-bg" href="https://www.figma.com/design/yDpuZkVERz9JDByKm1TB8G/E-Learning-MNRE?node-id=0-1&p=f&t=quPQ2oqVWHg2sM0B-0" target="_blank">
+                    <div class="card-image">
+                        <picture>
+                            <source media="(max-width: 768px)" srcset="images/web-02-home.webp" type="image/webp">
+                            <source media="(min-width: 769px)" srcset="images/web-02-home.webp" type="image/webp">
+                            <img src="images/web-02-home.jpg" alt="ระบบ E-Learning MNRE" loading="lazy">
+                        </picture>
+                    </div>
+                    <div class="project-content">
+                        <i class="fa-solid fa-graduation-cap project-icon"></i>
+                        <h3>E-Learning MNRE</h3>
+                        <p>แพลตฟอร์มการเรียนรู้ออนไลน์สำหรับกระทรวงทรัพยากรธรรมชาติและสิ่งแวดล้อม</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-briefcase text-primary"></i> ส่วนหนึ่งของทีมพัฒนาเว็บไซต์ (Frontend Developer)</h2>  
+            </div>
+            <div class="project-grid">
+                <a class="project-card" href="https://www.kbtg.tech/th/home" target="_blank">
                     <div class="project-content">
                         <i class="fa-solid fa-building-columns project-icon"></i>
                         <h3>KBTG</h3>
                         <p>Kasikorn Business-Technology Group พัฒนาระบบและอินเทอร์เฟซสำหรับธนาคารที่มีความปลอดภัยสูง</p>
                     </div>
-                    <div class="tech-stack">
-                        <span class="project-tag"><i class="fa-brands fa-react"></i> React / Next.js</span>
-                    </div>
-                </div>
-                <div class="project-card">
+                </a>
+                <a class="project-card" href="https://localgov.egov.go.th/landing" target="_blank">
                     <div class="project-content">
                         <i class="fa-solid fa-landmark project-icon"></i>
                         <h3>DGA</h3>
                         <p>สำนักงานพัฒนารัฐบาลดิจิทัล พัฒนาแพลตฟอร์มบริการภาครัฐที่รองรับผู้ใช้งานจำนวนมาก</p>
                     </div>
-                    <div class="tech-stack">
-                        <span class="project-tag"><i class="fa-brands fa-js"></i> TypeScript</span>
-                        <span class="project-tag">Next.js</span>
-                    </div>
-                </div>
-                <div class="project-card">
+                </a>
+                <a class="project-card" href="https://www.coway.co.th/" target="_blank">
                     <div class="project-content">
                         <i class="fa-solid fa-cart-shopping project-icon"></i>
-                        <h3>Coway TH / SG</h3>
+                        <h3>Coway</h3>
                         <p>แพลตฟอร์มอีคอมเมิร์ซและระบบจัดการการบริการสำหรับตลาดในไทยและสิงคโปร์</p>
                     </div>
-                    <div class="tech-stack">
-                        <span class="project-tag"><i class="fa-brands fa-php"></i> PHP</span>
-                        <span class="project-tag"><i class="fa-brands fa-react"></i> React</span>
-                    </div>
-                </div>
-                <div class="project-card">
+                </a>
+                <a class="project-card" href="https://www.rosrin.com/" target="_blank">
                     <div class="project-content">
                         <i class="fa-solid fa-gem project-icon"></i>
                         <h3>Rosrin</h3>
                         <p>เว็บไซต์แบรนด์ไลฟ์สไตล์ที่ทันสมัย เน้นความสวยงามของ UI และประสบการณ์ใช้งานที่ดี (UX)</p>
                     </div>
-                    <div class="tech-stack">
-                        <span class="project-tag"><i class="fa-brands fa-vuejs"></i> Vue / Nuxt</span>
-                    </div>
-                </div>
-                <div class="project-card">
+                </a>
+                <a class="project-card" href="https://www.lamitra-hwc.com/th/home" target="_blank">
                     <div class="project-content">
                         <i class="fa-solid fa-heart-pulse project-icon"></i>
                         <h3>La Mitra</h3>
                         <p>แพลตฟอร์มด้านสุขภาพและเวลเนสขั้นสูง พร้อมระบบจัดการข้อมูลที่ซับซ้อน</p>
                     </div>
-                    <div class="tech-stack">
-                        <span class="project-tag">Next.js</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-paper-plane text-primary"></i> ช่องทางการติดต่อ</h2>
+            </div>
+            <div class="wrap-contact">
+                <div class="contact-grid">
+                    
+                    <div class="row-item item-phone">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="col-list">
+                            <span class="contact-label">เบอร์โทรศัพท์</span>
+                            <a href="tel:0968561598" class="a-link">096-856-1598</a>
+                        </div>
                     </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-content">
-                        <i class="fa-solid fa-hospital-user project-icon"></i>
-                        <h3>มิตรไมตรีคลินิก</h3>
-                        <p>ระบบจองคิวและจัดการตารางเวลาสำหรับบริการทางคลินิก</p>
+
+                    <div class="row-item item-email">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div class="col-list">
+                            <span class="contact-label">อีเมล</span>
+                            <a href="mailto:official.manat@gmail.com" class="a-link">official.manat@gmail.com</a>
+                        </div>
                     </div>
-                    <div class="tech-stack">
-                        <span class="project-tag"><i class="fa-brands fa-html5"></i> HTML/CSS/JS</span>
+
+                    <div class="row-item item-github">
+                        <div class="icon-box">
+                            <i class="fa-brands fa-github"></i>
+                        </div>
+                        <div class="col-list">
+                            <span class="contact-label">GitHub</span>
+                            <a href="https://github.com/t4emin" target="_blank" class="a-link">github.com/t4emin</a>
+                            <a href="https://github.com/y3pdev" target="_blank" class="a-link">github.com/y3pdev</a>
+                        </div>
                     </div>
+
+                    <div class="row-item item-location">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div class="col-list">
+                            <span class="contact-label">สถานที่จัดส่งเอกสาร / ที่อยู่</span>
+                            <span class="a-link text-only">89/58 หมู่ 10 ตำบลบางเมืองใหม่ อำเภอเมือง จังหวัดสมุทรปราการ 10270</span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="modal-overlay" id="resumeModal" style="display: none;">
-        <div class="modal-content" id="modalContent">
-            <div class="modal-header">
-                <span class="modal-badge"><i class="fa-solid fa-circle-user text-primary"></i> โปรไฟล์การทำงาน</span>
-                <div class="modal-actions">
-                    <button class="btn-download" id="printBtn">
-                        <i class="fa-solid fa-download"></i> ดาวน์โหลด PDF
-                    </button>
-                    <button class="modal-close" id="closeResume">
-                        <i class="fa-solid fa-xmark"></i>
-                    </button>
-                </div>
+    <div class="modal-overlay" id="resumeModal">
+        <div class="modal-header">
+            <div class="modal-actions">
+                <button class="modal-close" id="closeResume">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
             </div>
-            
+        </div>
+
+        <div class="modal-content" id="modalContent">
             <div class="resume-body">
                 <div class="resume-header">
                     <div>
@@ -224,6 +292,7 @@
                         <div class="contact-item"><i class="fa-solid fa-phone"></i> 096-856-1598</div>
                         <div class="contact-item"><i class="fa-solid fa-envelope"></i> official.manat@gmail.com</div>
                         <div class="contact-item"><i class="fa-brands fa-github"></i> github.com/t4emin</div>
+                        <div class="contact-item"><i class="fa-brands fa-github"></i> github.com/y3pdev</div>
                         <div class="contact-item"><i class="fa-solid fa-location-dot"></i> เขตจตุจักร, กรุงเทพมหานคร</div>
                     </div>
                 </div>
@@ -237,7 +306,7 @@
 
                         <section class="resume-section">
                             <h2><i class="fa-solid fa-briefcase"></i> ประสบการณ์การทำงาน</h2>
-                            
+
                             <div class="exp-item">
                                 <div class="exp-header">
                                     <h3>Frontend Developer</h3>
@@ -250,7 +319,7 @@
                                     <li><i class="fa-solid fa-chevron-right"></i> ปรับแต่ง Core Web Vitals เพื่อเพิ่มประสิทธิภาพให้รองรับผู้ใช้งานจำนวนมาก</li>
                                 </ul>
                             </div>
-                            
+
                             <div class="exp-item">
                                 <div class="exp-header">
                                     <h3>Web Developer</h3>
@@ -283,7 +352,7 @@
                                     <h3>วิทยาศาสตรบัณฑิต (สาขาเทคโนโลยี)</h3>
                                     <span class="exp-date">สำเร็จการศึกษา</span>
                                 </div>
-                                <p class="exp-company" style="margin-top: 0.3rem;">มหาวิทยาลัยราชภัฏสวนสุนันทา</p>
+                                <p class="exp-company">มหาวิทยาลัยราชภัฏสวนสุนันทา</p>
                             </div>
                         </section>
                     </div>
@@ -291,7 +360,7 @@
                     <div class="side-col">
                         <section class="resume-section">
                             <h2><i class="fa-solid fa-code"></i> ทักษะโปรแกรมมิ่ง</h2>
-                            
+
                             <div class="skill-group">
                                 <h4>ภาษาหลัก</h4>
                                 <div class="skill-tags">
@@ -301,7 +370,7 @@
                                     <span class="tag"><i class="fa-brands fa-html5"></i> HTML/CSS</span>
                                 </div>
                             </div>
-                            
+
                             <div class="skill-group">
                                 <h4>เฟรมเวิร์ก</h4>
                                 <div class="skill-tags">
